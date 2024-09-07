@@ -8,8 +8,9 @@ import (
 
 func (app *application) routes() http.Handler {
 	router := chi.NewRouter()
-	router.Use(app.panicRecovery)
 	router.Use(app.requestLogger)
+	router.Use(app.panicRecovery)
+	router.Use(app.commonHeaders)
 
 	router.Get("/", app.home)
 
