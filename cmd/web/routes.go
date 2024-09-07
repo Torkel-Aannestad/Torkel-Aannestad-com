@@ -8,6 +8,7 @@ import (
 
 func (app *application) routes() http.Handler {
 	router := chi.NewRouter()
+	router.Use(app.panicRecovery)
 	router.Use(app.requestLogger)
 
 	router.Get("/", app.home)
