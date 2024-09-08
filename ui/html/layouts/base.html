@@ -3,7 +3,6 @@
 <html lang="en">
 
 <head>
-    <title>{{template "title" .}}</title>
     <link rel="icon" type="image/x-icon" href="/public/favicon.ico" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,7 +10,7 @@
     <script src="/public/htmx-2.0.1.min.js"></script>
     <script src="/public/allow422Swap.js"></script>
     <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/alpinejs" defer></script> -->
+    <script src="https://unpkg.com/alpinejs" defer></script> -->
     <title>{{template "title" .}}</title>
 </head>
 
@@ -20,12 +19,10 @@
         <h1><a href="/">Torkel Aannestad</a></h1>
     </header>
 
-    {{template "nav" .}}
+    {{ template "nav" . }}
 
-    <main>
-        <div id="main-content">
-            {{template "main" .}}
-        </div>
+    <main id="main-content">
+        {{ template "main" . }}
     </main>
 </body>
 
