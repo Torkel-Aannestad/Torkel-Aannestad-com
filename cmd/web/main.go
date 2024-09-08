@@ -4,18 +4,27 @@ import (
 	"log/slog"
 	"net/http"
 	"os"
+	"text/template"
 	"time"
 )
 
 type application struct {
-	logger slog.Logger
+	logger        slog.Logger
+	templateCache map[string]*template.Template
 }
 
 func main() {
 
 	logger := slog.New(slog.NewTextHandler(os.Stdout, nil))
+	templateCache, err := newTemplateCache()
+	if err != nil {
+		logger.Error("unable to get templates", "error", err)
+		os.Exit(1)
+	}
+
 	app := application{
-		logger: *logger,
+		logger:        *logger,
+		templateCache: templateCache,
 	}
 
 	srv := http.Server{
@@ -28,7 +37,7 @@ func main() {
 	}
 
 	logger.Info("Starting server", "addr", srv.Addr)
-	err := srv.ListenAndServe()
+	err = srv.ListenAndServe()
 	if err != nil {
 		logger.Error("server error", "error", err)
 		os.Exit(1)

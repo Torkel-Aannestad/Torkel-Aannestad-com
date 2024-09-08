@@ -1,6 +1,10 @@
 package main
 
-import "net/http"
+import (
+	"bytes"
+	"fmt"
+	"net/http"
+)
 
 func (app *application) serverErrorResponse(w http.ResponseWriter, r *http.Request, err error) {
 	method := r.Method
@@ -16,4 +20,31 @@ func (app *application) clientErrorResponse(w http.ResponseWriter, statusCode in
 	}
 
 	http.Error(w, http.StatusText(statusCode), statusCode)
+}
+
+func (app *application) render(w http.ResponseWriter, r *http.Request, statusCode int, page, template string, data interface{}) {
+	templateSet, ok := app.templateCache[page]
+	if !ok {
+		err := fmt.Errorf("could not find requested page")
+		app.serverErrorResponse(w, r, err)
+		return
+	}
+
+	if r.Header.Get("HX-Request") == "true" {
+		w.Header().Set("Vary", "HX-Request")
+	} else {
+		template = "base"
+	}
+
+	buf := new(bytes.Buffer)
+	err := templateSet.ExecuteTemplate(buf, template, data)
+	if err != nil {
+		app.serverErrorResponse(w, r, err)
+		return
+	}
+
+	w.WriteHeader(statusCode)
+
+	buf.WriteTo(w)
+
 }
