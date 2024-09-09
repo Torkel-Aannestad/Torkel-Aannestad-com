@@ -1,15 +1,18 @@
 {{- define "nav" -}}
-  <nav
-    class="mx-auto flex h-12 max-w-5xl justify-end px-2 sm:px-6 lg:justify-between lg:px-8"
-  >
-    <div class="hidden items-center lg:flex">Logo Here</div>
-    <ul class="flex items-center space-x-2">
-      <a href="/Blog" class="">
-        <li class="px-2 py-2">Blog</li>
+  <nav class="mx-auto flex h-12 max-w-5xl justify-end px-2 sm:px-6 lg:px-8">
+    <ul class="flex items-center gap-2">
+      <a href="/" hx-target="main" class="">
+        <li class="py-2">Home</li>
       </a>
-      <a href="/about" class="">
-        <li class="px-2 py-2">About</li>
+      <a href="/blog" hx-target="main" class="">
+        <li class="py-2">Blog</li>
+      </a>
+      <a href="/about" hx-target="main" class="">
+        <li class="py-2">About</li>
       </a>
     </ul>
   </nav>
 {{ end }}
+<!-- <a href="/" hx-target="main" class="flex items-center">
+    <span>Logo Here</span>
+  </a> -->
