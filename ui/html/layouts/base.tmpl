@@ -13,12 +13,17 @@
       <title>{{ template "title" . }}</title>
     </head>
 
-    <body class="bg-lightBeige text-black">
+    <body
+      class="bg-lightBeige flex min-h-screen flex-col justify-center text-black"
+    >
       <header>
         {{ template "nav" . }}
       </header>
 
-      <main id="main-content" class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+      <main
+        id="main-content"
+        class="mx-auto max-w-7xl grow px-2 sm:px-6 lg:px-8"
+      >
         {{ template "main" . }}
       </main>
     </body>
