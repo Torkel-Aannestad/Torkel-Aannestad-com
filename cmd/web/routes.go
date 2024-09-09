@@ -15,6 +15,7 @@ func (app *application) routes() http.Handler {
 
 	r.Method(http.MethodGet, "/public/*", http.FileServerFS(ui.Files))
 
-	r.Get("/", app.home)
+	r.Get("/", app.homeHandler)
+	r.Get("/about", app.aboutHandler)
 	return r
 }
