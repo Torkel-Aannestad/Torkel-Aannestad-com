@@ -15,11 +15,8 @@
 
     <body class="bg-neutral-800 text-white">
       <header>
-        <h1><a href="/">Torkel Aannestad</a></h1>
+        {{ template "nav" . }}
       </header>
-
-      {{ template "nav" . }}
-
 
       <main id="main-content">
         {{ template "main" . }}

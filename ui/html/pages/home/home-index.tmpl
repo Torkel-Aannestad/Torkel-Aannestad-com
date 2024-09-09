@@ -1,5 +1,9 @@
 {{ define "title" }}HOME👋{{ end }}
-{{- define "home-frag" -}}
-  <p class="text-4xl">Here is some main content for yah! 🤠</p>
+
+{{- define "home" -}}
+  <p class="py-20">main</p>
 {{ end }}
-{{- define "main" -}}{{ template "home-frag" . }}{{ end }}
+
+{{- define "main" -}}
+  {{ template "home" . }}
+{{ end }}

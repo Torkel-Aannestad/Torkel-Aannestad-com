@@ -1,5 +1,15 @@
 {{- define "nav" -}}
-  <nav class="w-full flex justify-center items-center py-10 min-h-12">
-    NAV HERE
+  <nav
+    class="mx-auto flex h-16 max-w-7xl justify-end px-2 sm:px-6 lg:justify-between lg:px-8"
+  >
+    <div class="hidden items-center lg:flex">Logo Here</div>
+    <ul class="flex items-center space-x-2">
+      <a href="/Blog" class="">
+        <li class="px-2 py-2">Blog</li>
+      </a>
+      <a href="/about" class="">
+        <li class="px-2 py-2">About</li>
+      </a>
+    </ul>
   </nav>
 {{ end }}
