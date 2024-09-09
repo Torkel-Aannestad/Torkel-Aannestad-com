@@ -1,0 +1,29 @@
+{{ define "base" }}
+  <!doctype html>
+  <html lang="en">
+    <head>
+      <link rel="icon" type="image/x-icon" href="/public/favicon.ico" />
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="/public/css/styles.css" />
+      <script src="/public/htmx-2.0.1.min.js"></script>
+      <script src="/public/allow422swap.js"></script>
+      <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/alpinejs" defer></script> -->
+      <title>{{ template "title" . }}</title>
+    </head>
+
+    <body class="bg-neutral-800 text-white">
+      <header>
+        <h1><a href="/">Torkel Aannestad</a></h1>
+      </header>
+
+      {{ template "nav" . }}
+
+
+      <main id="main-content">
+        {{ template "main" . }}
+      </main>
+    </body>
+  </html>
+{{ end }}

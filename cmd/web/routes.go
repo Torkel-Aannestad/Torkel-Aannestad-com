@@ -3,16 +3,18 @@ package main
 import (
 	"net/http"
 
+	"github.com/Torkel-Aannestad/torkel-dev/ui"
 	"github.com/go-chi/chi/v5"
 )
 
 func (app *application) routes() http.Handler {
-	router := chi.NewRouter()
-	router.Use(app.requestLogger)
-	router.Use(app.panicRecovery)
-	router.Use(app.commonHeaders)
+	r := chi.NewRouter()
+	r.Use(app.requestLogger)
+	r.Use(app.panicRecovery)
+	r.Use(app.commonHeaders)
 
-	router.Get("/", app.home)
+	r.Method(http.MethodGet, "/public/*", http.FileServerFS(ui.Files))
 
-	return router
+	r.Get("/", app.home)
+	return r
 }

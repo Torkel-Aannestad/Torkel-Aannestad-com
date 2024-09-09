@@ -17,7 +17,7 @@ live/server:
 
 .PHONY: live/tailwind
 live/tailwind:
-	tailwindcss -i ui/css/input.css -o ui/public/styles.css --watch
+	tailwindcss -i ui/css/input.css -o ui/public/css/styles.css --watch
 
 
 ## Quality control

@@ -25,7 +25,7 @@ func (app *application) clientErrorResponse(w http.ResponseWriter, statusCode in
 func (app *application) render(w http.ResponseWriter, r *http.Request, statusCode int, page, template string, data interface{}) {
 	templateSet, ok := app.templateCache[page]
 	if !ok {
-		err := fmt.Errorf("could not find requested page")
+		err := fmt.Errorf("could not find requested page template in render")
 		app.serverErrorResponse(w, r, err)
 		return
 	}
