@@ -1,0 +1,24 @@
+{{ define "title" }}Articles{{ end }}
+
+{{- define "home" -}}
+  <div class="py-24  lg:flex lg:items-center lg:gap-4 lg:gap-x-10">
+    <div class="hidden rounded-lg lg:block lg:w-1/3" alt="bg image">
+      <img
+        class="aspect-square -rotate-3 rounded-2xl object-cover"
+        src="/public/bg.jpg"
+        alt="Hei"
+      />
+    </div>
+
+    <div class="w-full font-light lg:w-2/3">
+      <h1 class="text-4xl sm:text-6xl">Articles here</h1>
+      <p class="mt-8 sm:mt-12 text-lg sm:text-2xl text-neutral-700">
+        Of yes tons of articles, yes 📄
+      </p>
+    </div>
+  </div>
+{{ end }}
+
+{{- define "main" -}}
+  {{ template "home" . }}
+{{ end }}

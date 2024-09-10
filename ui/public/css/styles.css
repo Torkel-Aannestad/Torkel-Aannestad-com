@@ -647,10 +647,6 @@ video {
   justify-content: center;
 }
 
-.gap-2{
-  gap: 0.5rem;
-}
-
 .gap-4{
   gap: 1rem;
 }
@@ -783,8 +779,13 @@ video {
   color: rgb(23 23 23 / var(--tw-text-opacity));
 }
 
-.group:hover .group-hover\:fill-teal-500{
-  fill: #14b8a6;
+.hover\:border-b:hover{
+  border-bottom-width: 1px;
+}
+
+.hover\:border-neutral-800:hover{
+  --tw-border-opacity: 1;
+  border-color: rgb(38 38 38 / var(--tw-border-opacity));
 }
 
 @media (min-width: 640px){

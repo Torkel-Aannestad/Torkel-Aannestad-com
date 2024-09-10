@@ -8,3 +8,6 @@ func (app *application) homeHandler(w http.ResponseWriter, r *http.Request) {
 func (app *application) aboutHandler(w http.ResponseWriter, r *http.Request) {
 	app.render(w, r, http.StatusOK, "about.tmpl", "about", nil)
 }
+func (app *application) articleHandler(w http.ResponseWriter, r *http.Request) {
+	app.render(w, r, http.StatusOK, "articles.tmpl", "home", nil)
+}

@@ -1,18 +1,27 @@
 {{- define "nav" -}}
   <nav class="mx-auto flex h-12 max-w-5xl justify-end px-2 sm:px-6 lg:px-8">
-    <ul class="flex items-center gap-2">
-      <a href="/" hx-target="main" class="">
+    <ul class="flex items-center gap-4">
+      <a
+        href="/"
+        hx-target="main"
+        class="hover:border-b hover:border-neutral-800"
+      >
         <li class="py-2">Home</li>
       </a>
-      <a href="/blog" hx-target="main" class="">
-        <li class="py-2">Blog</li>
+      <a
+        href="/articles"
+        hx-target="main"
+        class="hover:border-b hover:border-neutral-800"
+      >
+        <li class="py-2">Articles</li>
       </a>
-      <a href="/about" hx-target="main" class="">
+      <a
+        href="/about"
+        hx-target="main"
+        class="hover:border-b hover:border-neutral-800 "
+      >
         <li class="py-2">About</li>
       </a>
     </ul>
   </nav>
 {{ end }}
-<!-- <a href="/" hx-target="main" class="flex items-center">
-    <span>Logo Here</span>
-  </a> -->
