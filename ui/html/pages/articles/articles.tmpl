@@ -1,24 +1,23 @@
 {{ define "title" }}Articles{{ end }}
 
-{{- define "home" -}}
-  <div class="py-24  lg:flex lg:items-center lg:gap-4 lg:gap-x-10">
-    <div class="hidden rounded-lg lg:block lg:w-1/3" alt="bg image">
-      <img
-        class="aspect-square -rotate-3 rounded-2xl object-cover"
-        src="/public/bg.jpg"
-        alt="Hei"
-      />
-    </div>
-
-    <div class="w-full font-light lg:w-2/3">
-      <h1 class="text-4xl sm:text-6xl">Articles here</h1>
-      <p class="mt-8 sm:mt-12 text-lg sm:text-2xl text-neutral-700">
-        Of yes tons of articles, yes 📄
+{{- define "articles" -}}
+  <div class="py-24 max-w-2xl">
+    <h1 class="text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl">
+      Writing on software design, company building, and the aerospace industry.
+    </h1>
+    <div class="mt-6 space-y-7 text-base text-neutral-800">
+      <p>
+        All of my long-form thoughts on programming, leadership, product design,
+        and more, collected in chronological order.
       </p>
     </div>
   </div>
+
+  {{ template "article-list" . }}
+
+  <div class="mb-24 lg:mb-40"></div>
 {{ end }}
 
 {{- define "main" -}}
-  {{ template "home" . }}
+  {{ template "articles" . }}
 {{ end }}

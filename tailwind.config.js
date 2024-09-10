@@ -5,7 +5,12 @@ module.exports = {
     theme: {
         extend: {
           colors: {
-            lightBeige: '#FFF8E9'
+            lightBeige: '#FFF8E9',
+            darkBeige: '#FFEDCA',
+            mediumGreen: '#264B3C',
+            darkGreen: '#123527',
+            lightGreen: '#9FD4B6',
+            lightBlue: '#B0C2FF',
           },
           fontFamily: {
             'sans': ['"Urbanist"', ...defaultTheme.fontFamily.sans],
