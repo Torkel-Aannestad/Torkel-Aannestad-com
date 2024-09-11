@@ -1,5 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
 
+pre[class*='language-'] {
+  color: #f5f5f5;
+  background-color: #171717;
+}
+
+.token.tag,
+.token.class-name,
+.token.selector,
+.token.selector .class,
+.token.selector.class,
+.token.function {
+  color: #f472b6;
+}
+
+.token.attr-name,
+.token.keyword,
+.token.rule,
+.token.pseudo-class,
+.token.important {
+  color: #d4d4d4;
+}
+
+.token.module {
+  color: #f472b6;
+}
+
+.token.attr-value,
+.token.class,
+.token.string,
+.token.property {
+  color: #5eead4;
+}
+
+.token.punctuation,
+.token.attr-equals {
+  color: #737373;
+}
+
+.token.unit,
+.language-css .token.function {
+  color: #bae6fd;
+}
+
+.token.comment,
+.token.operator,
+.token.combinator {
+  color: #a3a3a3;
+}
+
 /*
 ! tailwindcss v3.4.7 | MIT License | https://tailwindcss.com
 */
@@ -1427,11 +1476,6 @@ video {
   margin-right: auto;
 }
 
-.my-auto{
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
 .mb-24{
   margin-bottom: 6rem;
 }
@@ -1476,18 +1520,6 @@ video {
   margin-top: 2rem;
 }
 
-.mb-10{
-  margin-bottom: 2.5rem;
-}
-
-.mb-4{
-  margin-bottom: 1rem;
-}
-
-.block{
-  display: block;
-}
-
 .flex{
   display: flex;
 }
@@ -1516,20 +1548,8 @@ video {
   height: 1rem;
 }
 
-.h-full{
-  height: 100%;
-}
-
-.h-screen{
-  height: 100vh;
-}
-
 .min-h-screen{
   min-height: 100vh;
-}
-
-.min-h-full{
-  min-height: 100%;
 }
 
 .w-0\.5{
@@ -1711,11 +1731,6 @@ video {
 .py-24{
   padding-top: 6rem;
   padding-bottom: 6rem;
-}
-
-.py-40{
-  padding-top: 10rem;
-  padding-bottom: 10rem;
 }
 
 .pl-3\.5{
