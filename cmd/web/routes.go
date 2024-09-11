@@ -15,6 +15,7 @@ func (app *application) routes() http.Handler {
 
 	r.Method(http.MethodGet, "/public/*", http.FileServerFS(ui.Files))
 
+	r.NotFound(app.notFoundHandler)
 	r.Get("/", app.homeHandler)
 	r.Get("/about", app.aboutHandler)
 	r.Get("/posts", app.postHandler)

@@ -1427,6 +1427,11 @@ video {
   margin-right: auto;
 }
 
+.my-auto{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 .mb-24{
   margin-bottom: 6rem;
 }
@@ -1471,6 +1476,14 @@ video {
   margin-top: 2rem;
 }
 
+.mb-10{
+  margin-bottom: 2.5rem;
+}
+
+.mb-4{
+  margin-bottom: 1rem;
+}
+
 .block{
   display: block;
 }
@@ -1503,8 +1516,20 @@ video {
   height: 1rem;
 }
 
+.h-full{
+  height: 100%;
+}
+
+.h-screen{
+  height: 100vh;
+}
+
 .min-h-screen{
   min-height: 100vh;
+}
+
+.min-h-full{
+  min-height: 100%;
 }
 
 .w-0\.5{
@@ -1609,10 +1634,6 @@ video {
   margin-bottom: calc(1.75rem * var(--tw-space-y-reverse));
 }
 
-.overflow-scroll{
-  overflow: scroll;
-}
-
 .overflow-y-scroll{
   overflow-y: scroll;
 }
@@ -1627,11 +1648,6 @@ video {
 
 .rounded-lg{
   border-radius: 0.5rem;
-}
-
-.border-neutral-700{
-  --tw-border-opacity: 1;
-  border-color: rgb(64 64 64 / var(--tw-border-opacity));
 }
 
 .bg-darkBeige{
@@ -1695,6 +1711,11 @@ video {
 .py-24{
   padding-top: 6rem;
   padding-bottom: 6rem;
+}
+
+.py-40{
+  padding-top: 10rem;
+  padding-bottom: 10rem;
 }
 
 .pl-3\.5{
@@ -1808,10 +1829,6 @@ video {
 
 .ring-neutral-900\/5{
   --tw-ring-color: rgb(23 23 23 / 0.05);
-}
-
-.ring-white\/20{
-  --tw-ring-color: rgb(255 255 255 / 0.2);
 }
 
 .transition{
@@ -2275,14 +2292,6 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.group:hover .group-hover\:stroke-neutral-700{
-  stroke: #404040;
-}
-
-.group:hover .group-hover\:stroke-neutral-900{
-  stroke: #171717;
-}
-
 .group:hover .group-hover\:stroke-neutral-950{
   stroke: #0a0a0a;
 }
@@ -2365,10 +2374,6 @@ video {
     align-items: baseline;
   }
 
-  .md\:overflow-scroll{
-    overflow: scroll;
-  }
-
   .md\:border-l{
     border-left-width: 1px;
   }
@@ -2384,28 +2389,12 @@ video {
 }
 
 @media (min-width: 1024px){
-  .lg\:absolute{
-    position: absolute;
-  }
-
-  .lg\:-left-5{
-    left: -1.25rem;
-  }
-
   .lg\:order-first{
     order: -9999;
   }
 
   .lg\:row-span-2{
     grid-row: span 2 / span 2;
-  }
-
-  .lg\:-mt-2{
-    margin-top: -0.5rem;
-  }
-
-  .lg\:mb-0{
-    margin-bottom: 0px;
   }
 
   .lg\:mb-40{
@@ -2478,23 +2467,5 @@ video {
   .lg\:text-9xl{
     font-size: 8rem;
     line-height: 1;
-  }
-}
-
-@media (min-width: 1280px){
-  .xl\:relative{
-    position: relative;
-  }
-
-  .xl\:-top-2\.5{
-    top: -0.625rem;
-  }
-
-  .xl\:left-0{
-    left: 0px;
-  }
-
-  .xl\:mt-0{
-    margin-top: 0px;
   }
 }

@@ -8,13 +8,14 @@
       <link rel="stylesheet" href="/public/css/styles.css" />
       <script src="/public/htmx-2.0.1.min.js"></script>
       <script src="/public/allow422swap.js"></script>
-
       <!-- <script src="https://unpkg.com/alpinejs" defer></script> -->
+
+      <title>{{ template "title" . }}</title>
       <title>{{ template "title" . }}</title>
     </head>
 
     <body
-      class="bg-lightBeige flex min-h-screen flex-col justify-center text-neutral-900 overflow-y-scroll"
+      class="bg-lightBeige flex min-h-screen flex-col text-neutral-900 overflow-y-scroll"
     >
       <header>
         {{ template "nav" . }}
@@ -22,7 +23,7 @@
 
       <main
         id="main-content"
-        class="mx-auto max-w-5xl grow px-4 sm:px-6 lg:px-8"
+        class="mx-auto max-w-5xl grow px-4 sm:px-6 lg:px-8 flex flex-col"
       >
         {{ template "main" . }}
       </main>
