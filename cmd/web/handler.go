@@ -12,3 +12,7 @@ func (app *application) articleHandler(w http.ResponseWriter, r *http.Request) {
 	data := []string{"1", "2", "3"}
 	app.render(w, r, http.StatusOK, "articles.tmpl", "articles", data)
 }
+func (app *application) articleDetailsHandler(w http.ResponseWriter, r *http.Request) {
+
+	app.render(w, r, http.StatusOK, "article-details-slug.tmpl", "article-details", nil)
+}

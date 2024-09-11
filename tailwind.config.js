@@ -1,9 +1,15 @@
+const typographyStyles = require('./typography')
+
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
     content: ["./**/*.html", "./**/*.tmpl"],
+    //works with tailwind cli
+    plugins: [
+      require('@tailwindcss/typography'),
+    ],
     theme: {
-        extend: {
+      extend: {
           colors: {
             lightBeige: '#FFF8E9',
             darkBeige: '#FFEDCA',
@@ -14,7 +20,9 @@ module.exports = {
           },
           fontFamily: {
             'sans': ['"Urbanist"', ...defaultTheme.fontFamily.sans],
-        }
-        }
-    }
+          }
+      },
+      // typography: typographyStyles,
+    },
+    
 }
