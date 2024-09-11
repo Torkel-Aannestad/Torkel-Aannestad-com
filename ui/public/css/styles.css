@@ -1609,6 +1609,14 @@ video {
   margin-bottom: calc(1.75rem * var(--tw-space-y-reverse));
 }
 
+.overflow-scroll{
+  overflow: scroll;
+}
+
+.overflow-y-scroll{
+  overflow-y: scroll;
+}
+
 .rounded-2xl{
   border-radius: 1rem;
 }
@@ -2355,6 +2363,10 @@ video {
 
   .md\:items-baseline{
     align-items: baseline;
+  }
+
+  .md\:overflow-scroll{
+    overflow: scroll;
   }
 
   .md\:border-l{
