@@ -1,9 +1,0 @@
-{{ define "article-list" }}
-  <div class=" md:border-l md:border-neutral-300 md:pl-6 ">
-    <div class="flex max-w-3xl flex-col space-y-16">
-      {{ range . }}
-        {{ template "article-card" . }}
-      {{ end }}
-    </div>
-  </div>
-{{ end }}

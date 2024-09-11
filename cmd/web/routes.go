@@ -17,8 +17,8 @@ func (app *application) routes() http.Handler {
 
 	r.Get("/", app.homeHandler)
 	r.Get("/about", app.aboutHandler)
-	r.Get("/articles", app.articleHandler)
-	r.Get("/articles/details", app.articleDetailsHandler)
+	r.Get("/posts", app.postHandler)
+	r.Get("/posts/details", app.postDetailsHandler)
 
 	return r
 }

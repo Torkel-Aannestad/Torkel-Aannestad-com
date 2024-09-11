@@ -1,9 +1,9 @@
 {{ define "title" }}Details{{ end }}
-{{ define "article-details" }}
+{{ define "post-details" }}
   <article
     class="mt-16 lg:mt-32 prose prose-neutral prose-sm sm:prose-base lg:prose-xl"
   >
-    {{ template "article-back-button" . }}
+    {{ template "post-back-button" . }}
     <h1>Introducing Animaginary: High performance web animations</h1>
     <div class="mt-8" data-mdx-content="true">
       <p>
@@ -80,5 +80,5 @@
 {{ end }}
 
 {{ define "main" }}
-  {{ template "article-details" }}
+  {{ template "post-details" }}
 {{ end }}

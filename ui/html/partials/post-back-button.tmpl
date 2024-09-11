@@ -1,10 +1,10 @@
-{{ define "article-back-button" }}
+{{ define "post-back-button" }}
   <button
-    hx-get="/articles"
+    hx-get="/posts"
     hx-target="main"
     hx-push-url="true"
     type="button"
-    aria-label="Go back to articles"
+    aria-label="Go back to posts"
     class="group mb-8 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md hover:shadow-lg shadow-neutral-800/5 ring-1 ring-neutral-900/5 transition"
   >
     <svg
