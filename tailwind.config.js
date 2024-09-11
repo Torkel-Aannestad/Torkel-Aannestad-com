@@ -1,7 +1,6 @@
-const typographyStyles = require('./typography')
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
-const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
     content: ["./**/*.html", "./**/*.tmpl"],
     //works with tailwind cli
@@ -22,7 +21,6 @@ module.exports = {
             'sans': ['"Urbanist"', ...defaultTheme.fontFamily.sans],
           }
       },
-      // typography: typographyStyles,
     },
     
 }

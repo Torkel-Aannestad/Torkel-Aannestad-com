@@ -1553,12 +1553,6 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.scale-100{
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .scale-95{
   --tw-scale-x: .95;
   --tw-scale-y: .95;
@@ -1785,10 +1779,6 @@ video {
 
 .opacity-0{
   opacity: 0;
-}
-
-.opacity-100{
-  opacity: 1;
 }
 
 .shadow-md{
@@ -2265,6 +2255,12 @@ video {
   border-color: rgb(38 38 38 / var(--tw-border-opacity));
 }
 
+.hover\:shadow-lg:hover{
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .group:hover .group-hover\:scale-100{
   --tw-scale-x: 1;
   --tw-scale-y: 1;
@@ -2275,18 +2271,16 @@ video {
   stroke: #404040;
 }
 
+.group:hover .group-hover\:stroke-neutral-900{
+  stroke: #171717;
+}
+
+.group:hover .group-hover\:stroke-neutral-950{
+  stroke: #0a0a0a;
+}
+
 .group:hover .group-hover\:opacity-100{
   opacity: 1;
-}
-
-.prose-h1\:text-4xl :is(:where(h1):not(:where([class~="not-prose"] *))){
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
-
-.prose-h1\:text-neutral-900 :is(:where(h1):not(:where([class~="not-prose"] *))){
-  --tw-text-opacity: 1;
-  color: rgb(23 23 23 / var(--tw-text-opacity));
 }
 
 @media (min-width: 640px){
@@ -2306,11 +2300,6 @@ video {
   .sm\:px-6{
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-  }
-
-  .sm\:px-8{
-    padding-left: 2rem;
-    padding-right: 2rem;
   }
 
   .sm\:py-32{
@@ -2335,11 +2324,6 @@ video {
 
   .sm\:text-7xl{
     font-size: 4.5rem;
-    line-height: 1;
-  }
-
-  .prose-h1\:sm\:text-5xl :is(:where(h1):not(:where([class~="not-prose"] *))){
-    font-size: 3rem;
     line-height: 1;
   }
 }
@@ -2434,10 +2418,6 @@ video {
 
   .lg\:w-2\/3{
     width: 66.666667%;
-  }
-
-  .lg\:max-w-5xl{
-    max-width: 64rem;
   }
 
   .lg\:max-w-none{
