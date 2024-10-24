@@ -1,5 +1,5 @@
 
-.PHONy:confirm
+.PHONY: confirm
 confirm:
 	@echo -n 'Are you sure? [y/N] ' && read ans && [ $${ans:-N} = y ]
 
