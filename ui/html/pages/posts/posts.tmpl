@@ -1,5 +1,9 @@
 {{ define "title" }}Posts{{ end }}
 
+{{- define "main" -}}
+  {{ template "posts" . }}
+{{ end }}
+
 {{- define "posts" -}}
   <div class="py-24 max-w-2xl">
     <h1 class="text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl">
@@ -12,14 +16,32 @@
       </p>
     </div>
   </div>
-
   {{ template "post-list" . }}
-
   <div class="mb-24 lg:mb-40"></div>
-{{ end }}
-
-{{- define "main" -}}
-  {{ template "posts" . }}
+  <!-- black sousage -->
+  <img
+    src="/public/shapes/asset-shape-3.svg"
+    alt="shape"
+    class="hidden lg:block lg:w-1/6 xl:w-[22%] absolute top-[24%] -left-[4%] xl:-left-[10%]  -z-10  "
+  />
+  <!-- Right round dots -->
+  <img
+    src="/public/shapes/asset-multiple-shape-4.svg"
+    alt="shape"
+    class="w-[30%] lg:w-1/4 absolute top-[28%] -right-[8%]  -z-10  "
+  />
+  <!-- Left star -->
+  <img
+    src="/public/shapes/asset-poligon-1.svg"
+    alt="shape"
+    class="w-[2%] absolute top-[35%] lg:top-[60%] left-[4%] lg:left-[8%] -z-10 "
+  />
+  <!-- Right star -->
+  <img
+    src="/public/shapes/asset-star-3.svg"
+    alt="shape"
+    class="w-[5%] lg:w-[3%] absolute top-[12%] sm:top-[20%] xl:top-[24%] right-[6%] lg:right-[16%] xl:right-[24%] -z-10"
+  />
 {{ end }}
 
 {{ define "post-list" }}
