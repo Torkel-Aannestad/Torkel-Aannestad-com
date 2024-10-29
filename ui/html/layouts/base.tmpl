@@ -17,7 +17,7 @@
     </head>
 
     <body
-      class="bg-lightBeige flex min-h-screen flex-col text-neutral-900 overflow-y-scroll"
+      class="relative bg-lightBeige flex min-h-screen flex-col text-neutral-900 overflow-y-scroll"
     >
       <header>
         {{ template "nav" . }}
@@ -25,7 +25,7 @@
 
       <main
         id="main-content"
-        class="mx-auto max-w-5xl grow px-4 sm:px-6 lg:px-8 flex flex-col relative"
+        class="mx-auto max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl grow px-4 sm:px-6 lg:px-8 flex flex-col"
       >
         {{ template "main" . }}
       </main>

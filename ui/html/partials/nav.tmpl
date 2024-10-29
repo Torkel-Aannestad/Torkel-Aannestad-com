@@ -1,5 +1,7 @@
 {{- define "nav" -}}
-  <nav class="mx-auto flex h-12 max-w-5xl justify-end px-2 sm:px-6 lg:px-8">
+  <nav
+    class="mx-auto flex h-12 max-w-5xl justify-end px-2 sm:px-6 lg:px-8 relative"
+  >
     <ul class="flex items-center gap-4">
       <button
         hx-get="/"
@@ -26,5 +28,10 @@
         <li class="py-2">About</li>
       </button>
     </ul>
+    <img
+      src="/public/shapes/asset-arrow-1.svg"
+      alt="shape"
+      class="hidden xl:block w-[3.5%] absolute -bottom-[60%] -right-[2%] -z-10"
+    />
   </nav>
 {{ end }}
