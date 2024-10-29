@@ -1,18 +1,24 @@
 {{ define "title" }}About{{ end }}
 {{ define "about" }}
   <div
-    class="grid grid-cols-1 gap-y-16 py-20 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12"
+    class="grid grid-cols-1 gap-y-16 py-20 lg:grid-cols-3 lg:grid-rows-[auto_1fr] lg:gap-y-12"
   >
-    <div class="lg:pl-20">
-      <div class="max-w-xs px-2.5 lg:max-w-none">
+    <div class="lg:pl-14">
+      <div class="relative max-w-48 px-2.5 lg:max-w-none">
         <img
           src="/public/portrait.jpg"
           alt=""
           class="aspect-square rotate-3 rounded-2xl object-cover"
         />
+        <!-- image wrap -->
+        <img
+          src="/public/shapes/asset-shape-7.svg"
+          alt="shape"
+          class="absolute rotate-45 -top-10 -right-6 -z-10 "
+        />
       </div>
     </div>
-    <div class="lg:order-first lg:row-span-2">
+    <div class="lg:order-first lg:row-span-3 lg:col-span-2">
       <h1
         class="text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl"
       >
@@ -41,7 +47,7 @@
         </p>
       </div>
     </div>
-    <div class="lg:pl-20">
+    <div class="lg:pl-16">
       <ul role="list">
         <a
           href="mailto:torkel@easywave.io"
@@ -116,6 +122,18 @@
           <li class="">GitHub</li></a
         >
       </ul>
+      <!-- black sousage -->
+      <img
+        src="/public/shapes/asset-multiple-shape-5.svg"
+        alt="shape"
+        class="rotate-180 lg:rotate-0 w-3/6 lg:w-2/6 xl:w-[22%] absolute top-[80%] lg:top-[16%] -right-[28%] lg:-left-[16%] xl:-left-[10%]  -z-10  "
+      />
+      <!-- Right round dots -->
+      <img
+        src="/public/shapes/asset-multiple-shape-6.svg"
+        alt="shape"
+        class="w-[30%] lg:w-1/4 absolute top-[16%] lg:top-[55%] lg:top -right-[8%] sm:-right-[10%] lg:-right-[12%] -z-10  "
+      />
     </div>
   </div>
 {{ end }}
