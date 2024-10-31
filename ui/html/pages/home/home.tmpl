@@ -3,26 +3,37 @@
 {{- define "home" -}}
   <div class="py-24 sm:py-32 xl:py-44 font-light text-center xl:text-left">
     <!-- <span class="text-2xl lg:text-6xl">Ohoi! 🦜</span> -->
-    <h1 class="text-4xl md:text-4xl xl:text-6xl gsap-fade-in">
-      <span>
-        I'm
-        <span class="font-semibold">Torkel Aannestad</span>,
-      </span>
-      <br />
-      <span
-        >a <span class="font-semibold">fullstack developer </span> based in
-        Oslo.
-      </span>
-    </h1>
-    <p
-      class="mt-8 sm:mt-10 lg:mt-12 text-lg md:text-xl xl:text-2xl text-neutral-700 gsap-fade-in"
-    >
-      I'm passionate about solving user needs with computer systems, frontend
-      and backend alike. <span class="font-bold">Go</span> is my current weapon
-      of choice, I love to experiment with <span class="font-bold">HTMX</span> ,
-      but also dig <span class="font-bold">Typescript</span> and
-      <span class="font-bold">React</span>.
-    </p>
+    <div class="relative">
+      <h1 class="text-4xl md:text-4xl xl:text-6xl gsap-fade-in gsap-h1">
+        <span>
+          I'm
+          <span class="font-semibold">Torkel Aannestad</span>,
+        </span>
+        <br />
+        <span
+          >a <span class="font-semibold">fullstack developer </span> based in
+          Oslo.
+        </span>
+      </h1>
+      <p
+        class="mt-8 sm:mt-10 lg:mt-12 text-lg md:text-xl xl:text-2xl text-neutral-700 gsap-fade-in"
+      >
+        I'm passionate about solving user needs with computer systems, frontend
+        and backend alike. <span class="font-bold">Go</span> is my current
+        weapon of choice, I love to experiment with
+        <span class="font-bold">HTMX</span> , but also dig
+        <span class="font-bold">Typescript</span> and
+        <span class="font-bold">React</span>.
+      </p>
+      <!-- OHOI -->
+      <img
+        src="/public/shapes/asset-bubble-ohoi.svg"
+        alt="shape"
+        class="w-20 xl:w-32 absolute -top-16 xl:-top-28 left-[16%] sm:left-1/4 xl:left-0 gsap-ohoi"
+      />
+      <!--  -->
+    </div>
+
     <!-- Left orange and dots -->
     <img
       src="/public/shapes/asset-shape-1.svg"
