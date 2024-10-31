@@ -17,12 +17,3 @@ function animateOnLoad() {
   });
 }
 document.addEventListener("DOMContentLoaded", animateOnLoad);
-
-const animateBubble = gsap.to(".gsap-ohoi", {
-  paused: true,
-  scale: 1.1,
-  duration: 0.1,
-});
-const bubble = document.querySelector(".gsap-h1");
-bubble.addEventListener("mouseenter", () => animateBubble.play());
-bubble.addEventListener("mouseleave", () => animateBubble.reverse());
