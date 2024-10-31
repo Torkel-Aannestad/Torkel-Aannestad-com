@@ -1,6 +1,9 @@
 package main
 
-import "net/http"
+import (
+	"fmt"
+	"net/http"
+)
 
 func (app *application) homeHandler(w http.ResponseWriter, r *http.Request) {
 	app.render(w, r, http.StatusOK, "home.tmpl", "home", nil)
@@ -12,9 +15,26 @@ func (app *application) aboutHandler(w http.ResponseWriter, r *http.Request) {
 	app.render(w, r, http.StatusOK, "about.tmpl", "about", nil)
 }
 func (app *application) postHandler(w http.ResponseWriter, r *http.Request) {
-	data := []string{"1", "2", "3"}
+	data := []post{}
+	for _, v := range app.postsData {
+		data = append(data, v)
+	}
+
 	app.render(w, r, http.StatusOK, "posts.tmpl", "posts", data)
 }
 func (app *application) postDetailsHandler(w http.ResponseWriter, r *http.Request) {
-	app.render(w, r, http.StatusOK, "post-details-slug.tmpl", "post-details", nil)
+	path := r.PathValue("id")
+
+	_, ok := app.postsData[path]
+	if !ok {
+		data := []post{}
+		for _, v := range app.postsData {
+			data = append(data, v)
+		}
+
+		app.render(w, r, http.StatusOK, "posts.tmpl", "posts", data)
+	}
+
+	pathFile := fmt.Sprintf("%v.tmpl", path)
+	app.render(w, r, http.StatusOK, pathFile, "post-details", nil)
 }

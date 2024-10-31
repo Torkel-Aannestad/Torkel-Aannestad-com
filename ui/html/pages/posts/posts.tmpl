@@ -6,10 +6,12 @@
 
 {{- define "posts" -}}
   <div class="py-24 max-w-2xl">
-    <h1 class="text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl">
+    <h1
+      class="text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl gsap-fade-in"
+    >
       Writing on software design, company building, and the aerospace industry.
     </h1>
-    <div class="mt-6 space-y-7 text-base text-neutral-800">
+    <div class="mt-6 space-y-7 text-base text-neutral-800 gsap-fade-in">
       <p>
         All of my long-form thoughts on programming, leadership, product design,
         and more, collected in chronological order.
@@ -18,6 +20,7 @@
   </div>
   {{ template "post-list" . }}
   <div class="mb-24 lg:mb-40"></div>
+
   <!-- Left green blob -->
   <img
     src="/public/shapes/asset-shape-3.svg"
@@ -40,7 +43,7 @@
   <img
     src="/public/shapes/asset-star-3.svg"
     alt="shape"
-    class="w-4 lg:w-12 absolute top-28 sm:top-[20%] xl:top-[24%] right-[6%] lg:right-[16%] xl:right-[28%] -z-10"
+    class="w-4 lg:w-12 absolute top-28 sm:top-[20%] xl:top-[24%] right-[6%] lg:right-[16%] xl:right-[24%] -z-10"
   />
 {{ end }}
 
@@ -56,38 +59,37 @@
 
 {{ define "post-card" }}
   <article class="md:grid md:grid-cols-4 md:items-baseline">
-    <div class="md:col-span-3 group relative flex flex-col items-start">
+    <div
+      class="md:col-span-3 group relative flex flex-col items-start gsap-fade-in"
+    >
       <h2 class="text-base font-semibold tracking-tight text-neutral-800 ">
         <div
           class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-darkBeige opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl /50"
         ></div>
-        <a href="/posts/details" hx-target="main"
+        <a href="posts/{{ .Slug }}" hx-target="main"
           ><span
-            class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"
+            class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl "
           ></span
-          ><span class="relative z-10"
-            >Crafting a design system for a multiplanetary future</span
-          ></a
+          ><span class="relative z-10 ">{{ .Title }}</span></a
         >
       </h2>
       <time
-        class="md:hidden relative z-10 order-first mb-3 flex items-center text-sm text-neutral-400  pl-3.5"
+        class="md:hidden relative z-10 order-first mb-3 flex items-center text-sm text-neutral-400  pl-3.5  gsap-fade-in"
         datetime="2022-09-05"
         ><span
           class="absolute inset-y-0 left-0 flex items-center"
           aria-hidden="true"
-          ><span class="h-4 w-0.5 rounded-full bg-neutral-300 "></span></span
-        >September 5, 2022</time
+          ><span
+            class="h-4 w-0.5 rounded-full bg-neutral-300  gsap-fade-in"
+          ></span></span
+        >{{ .Date }}</time
       >
-      <p class="relative z-10 mt-2 text-sm text-neutral-600 ">
-        Most companies try to stay ahead of the curve when it comes to visual
-        design, but for Planetaria we needed to create a brand that would still
-        inspire us 100 years from now when humanity has spread across our entire
-        solar system.
+      <p class="relative z-10 mt-2 text-sm text-neutral-600  gsap-fade-in">
+        {{ .Description }}
       </p>
       <div
         aria-hidden="true"
-        class="relative z-10 mt-4 flex items-center text-sm font-semibold text-neutral-900"
+        class="relative z-10 mt-4 flex items-center text-sm font-semibold text-neutral-900 gsap-fade-in"
       >
         Read article<svg
           viewBox="0 0 16 16"
@@ -106,8 +108,8 @@
     </div>
     <time
       class="mt-1 hidden relative z-10 order-first mb-3 md:flex md:items-center text-sm text-neutral-500 "
-      datetime="2022-09-05"
-      >September 5, 2022</time
+      datetime="{{ .Date }}"
+      >{{ .Date }}</time
     >
   </article>
 {{ end }}
