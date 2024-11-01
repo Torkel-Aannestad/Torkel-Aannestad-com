@@ -61,3 +61,13 @@ production/connect:
 .PHONY: production/deploy/app
 production/deploy/app:
 	rsync -P ./bin/linux_amd64/torkeldev-app torkeldev@${production_host_ip}:~
+	rsync -P ./remote/production/torkeldev.service torkeldev@${production_host_ip}:~
+	rsync -P ./remote/production/Caddyfile torkeldev@${production_host_ip}:~
+	ssh -t torkeldev@${production_host_ip} '\
+		sudo mv ~/torkeldev.service /etc/systemd/system/ \
+		&& sudo systemctl enable torkeldev \
+		&& sudo systemctl restart torkeldev \
+		&& sudo mv ~/Caddyfile /etc/caddy/ \
+		&& sudo systemctl reload caddy \
+	'
+	@echo "deployment complete..."

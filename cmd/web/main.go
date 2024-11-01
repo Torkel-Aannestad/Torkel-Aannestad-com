@@ -1,13 +1,11 @@
 package main
 
 import (
-	"expvar"
 	"flag"
 	"fmt"
 	"log/slog"
 	"net/http"
 	"os"
-	"runtime"
 	"text/template"
 	"time"
 )
@@ -15,11 +13,6 @@ import (
 type config struct {
 	port int
 	env  string
-	// rateLimiter struct {
-	// 	rps     float64
-	// 	burst   int
-	// 	enabled bool
-	// }
 }
 
 type application struct {
@@ -34,10 +27,6 @@ func main() {
 
 	flag.IntVar(&cfg.port, "port", 4000, "API server port")
 	flag.StringVar(&cfg.env, "env", "development", "Environment (development|staging|production)")
-	//rate limiter
-	// flag.Float64Var(&cfg.rateLimiter.rps, "rate-limit-rps", 2, "request per minute per ip")
-	// flag.IntVar(&cfg.rateLimiter.burst, "rate-limit-burst", 4, "rate limit bucket size")
-	// flag.BoolVar(&cfg.rateLimiter.enabled, "rate-limit-enabled", true, "rate limiter toggle")
 
 	//cors
 	// flag.Func("cors-trusted-origins", "Trusted CORS origins (space separated)", func(val string) error {
@@ -55,15 +44,6 @@ func main() {
 	}
 
 	posts := newPostsData()
-
-	//expvar metrics endpoint
-	// expvar.NewString("version").Set(version)
-	expvar.Publish("goroutines", expvar.Func(func() any {
-		return runtime.NumGoroutine()
-	}))
-	expvar.Publish("timestamp", expvar.Func(func() any {
-		return time.Now().Unix()
-	}))
 
 	app := application{
 		config:        cfg,
