@@ -21,5 +21,7 @@ func (app *application) routes() http.Handler {
 	r.Get("/posts", app.postHandler)
 	r.Get("/posts/{id}", app.postDetailsHandler)
 
+	// r.Method(http.MethodGet, "/metrics", expvar.Handler())
+
 	return r
 }
