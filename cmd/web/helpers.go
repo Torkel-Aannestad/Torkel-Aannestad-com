@@ -14,13 +14,13 @@ func (app *application) serverErrorResponse(w http.ResponseWriter, r *http.Reque
 	http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
 }
 
-func (app *application) clientErrorResponse(w http.ResponseWriter, statusCode int) {
-	if statusCode < 400 || statusCode > 499 {
-		statusCode = 400
-	}
+// func (app *application) clientErrorResponse(w http.ResponseWriter, statusCode int) {
+// 	if statusCode < 400 || statusCode > 499 {
+// 		statusCode = 400
+// 	}
 
-	http.Error(w, http.StatusText(statusCode), statusCode)
-}
+// 	http.Error(w, http.StatusText(statusCode), statusCode)
+// }
 
 func (app *application) render(w http.ResponseWriter, r *http.Request, statusCode int, page, template string, data interface{}) {
 	templateSet, ok := app.templateCache[page]

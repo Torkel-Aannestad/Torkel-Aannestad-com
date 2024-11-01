@@ -31,7 +31,7 @@ passwd --delete "${USERNAME}"
 chage --lastday 0 "${USERNAME}"
 
 # Copy the SSH keys from the root user to the new user.
-rsync --archive --chown=${USERNAME}:${USERNAME} /root/.ssh /home/${USERNAME}
+rsync --archive --chown=${USERNAME}:${USERNAME} /home/ew-user/.ssh /home/${USERNAME}
 
 # Configure the firewall to allow SSH, HTTP and HTTPS traffic.
 ufw allow 22
