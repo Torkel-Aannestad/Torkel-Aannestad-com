@@ -12,8 +12,8 @@ live/tailwind:
 	tailwindcss -i ui/css/input.css -o ui/public/css/styles.css --watch
 
 .PHONY: run/app
-run/app: build
-	@./bin/app
+run/app:
+	@./bin/app -env='development' -port='4001'
 
 # ==================================================================================== #
 # BUILD
