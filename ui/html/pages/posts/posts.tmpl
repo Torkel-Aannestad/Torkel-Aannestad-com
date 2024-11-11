@@ -5,17 +5,15 @@
 {{ end }}
 
 {{- define "posts" -}}
+  <title>Posts</title>
   <div class="py-24 max-w-2xl">
     <h1
       class="text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl gsap-fade-in"
     >
-      Writing on software design, company building, and the aerospace industry.
+      Writing on fullstack software development, and my journey as a developer.
     </h1>
     <div class="mt-6 space-y-7 text-base text-neutral-800 gsap-fade-in">
-      <p>
-        All of my long-form thoughts on programming, leadership, product design,
-        and more, collected in chronological order.
-      </p>
+      <p>My thought on programming, recent discoveries and learnings.</p>
     </div>
   </div>
   {{ template "post-list" . }}
