@@ -2,6 +2,6 @@
   email torkel@easywave.io
 }
 
-http://torkelaannestad.com {
-  reverse_proxy localhost:4000
+torkelaannestad.com {
+  respond "I am caddy"
 }
