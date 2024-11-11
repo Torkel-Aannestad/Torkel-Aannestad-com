@@ -1,0 +1,128 @@
+{{ define "title" }}Post{{ end }}
+{{ define "post-details" }}
+  <title>Behind the Scenes: Building This Website</title>
+  <article
+    class="mt-16 prose prose-neutral prose-sm sm:prose-base lg:prose-xl gsap-fade-in"
+  >
+    {{ template "post-back-button" . }}
+    <h1>Behind the Scenes: Building This Website</h1>
+    <div class="mt-8">
+      <p>
+        Welcome to my little corner of the internet! I'm peeling back the
+        curtain to give you a peek into the technologies and decisions that
+        brought this site to life.
+      </p>
+      <p>
+        The website is powered by a custom Go application using HTML templates
+        from the standard library, Chi router, HTMX, tailwindcss and GSAP for
+        animations. It's for sure over-engineering to run an application server
+        with routing, middleware and so on, the site could be a static site
+        hosted on a CDN, but what's the fun in that?
+      </p>
+
+      <p>
+        I wanted to utilize the power of <strong>HTMX</strong> to have seamless
+        site navigation. When coming from React-land having full page reloads
+        when navigating feels ickier than it should. The average user probably
+        doesn't even notice it. HTMX is still a favorite of mine and I use it
+        whenever possible.
+      </p>
+      <pre><code class="language-markup">
+Example of HTMX being used in the navigation component:
+&lt;button
+  hx-get="/posts"
+  hx-target="main"
+  hx-push-url="/posts"
+  class="hover:border-b hover:border-neutral-800"
+&gt;
+  &lt;li class="py-2"&gt;Posts&lt;/li&gt;
+&lt;/button&gt;
+      </code></pre>
+      <p>
+        For styling my default has been <strong>tailwindcss</strong> for quite a
+        while. Running it with Go instead of JavaScript is surprisingly simple
+        using the Tailwindcss CLI. It's easy to set up your build and dev script
+        in a Makefile to make it virtually the same as with npm. I did however
+        end up using npm for some prettier plugins for go-templates and tailwind
+        to get autoformatting and syntax highlighting when writing the html
+        templates. These are just dev dependencies but having a node_modules
+        directory in a Go project is pretty messy.
+      </p>
+      <p>
+        I wanted to have a <strong>blog</strong> on the website mostly to
+        publish things along my development journey to have something to look
+        back on and help other people discover the same things as I. I decided
+        to make the blog functionality directly with HTML. Why not markdown you
+        may think? To write our blogposts in markdown we need a solution to
+        parse the content and the graymatter. There are several good libraries
+        which handle this use case, like
+        <a
+          href="https://github.com/russross/blackfriday"
+          target="_blank"
+          rel="noopener noreferrer"
+          >BlackFriday</a
+        >
+        and
+        <a
+          href="https://github.com/gomarkdown/markdown"
+          target="_blank"
+          rel="noopener noreferrer"
+          >gomarkdown</a
+        >. The biggest reason for not choosing these is for applying situational
+        styling. When using html tags directly you can style the element as you
+        need it. When using markdown there is more difficult to style e.g. an
+        instance of a paragraph differently because you can't add a class to the
+        element. So, if my current post demand something different from the
+        rest, I'm free to do what I want.
+      </p>
+      <p>
+        I wanted to try <strong>GSAP</strong> for animations and interactivity.
+        One of the reasons for this was the fact that they offer a CDN version
+        where you can select which features to include. This way the user
+        doesn't need to download more than necessary. The performance
+        implications of these JavaScript based animations are usually terrible.
+        Going forward I may try to design with CSS animations, the browser page
+        transition API and so on to have less performance impact. As seen below
+        GSAP can be pretty simple to work with:
+      </p>
+
+      <pre><code class="language-javascript">
+function animateOnLoad() {
+  gsap.from(".gsap-fade-in", {
+    duration: 1,
+    y: 150,
+    opacity: 0,
+    ease: "expo.out",
+  });
+  gsap.from(".gsap-ohoi", {
+    delay: 1,
+    duration: 1.5,
+    y: 150,
+    scale: 0,
+    opacity: 0,
+    ease: "expo.out",
+  });
+}
+document.addEventListener("DOMContentLoaded", animateOnLoad);
+      </code></pre>
+
+      <p>
+        The site is <strong>hosted on a VPS</strong> server running Ubuntu with
+        Nginx reverse proxy. I designed the deployment process as simple as
+        possible using Makefile and rsync. Because Go compiles to a single
+        binary I simply rsync the binary to the server and restart the service.
+        I did have to spend some time setting up a unit file to properly run the
+        binary on the server with production flags and restart policy, etc.
+        After a bit of research, I found this process to be surprisingly easy to
+        implement. Once again, I'm amazed by how well Linux tools and utils
+        work.
+      </p>
+
+      <p>Thanks for reading! ❤️</p>
+    </div>
+  </article>
+{{ end }}
+
+{{ define "main" }}
+  {{ template "post-details" }}
+{{ end }}

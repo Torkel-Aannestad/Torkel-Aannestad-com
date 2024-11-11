@@ -23,6 +23,7 @@ run/app:
 .PHONY: build/app
 build/app:
 	@echo 'Building cmd/app...'
+	tailwindcss -i ui/css/input.css -o ui/public/css/styles.css --minify
 	go build -ldflags='-s' -o=./bin/app ./cmd/web
 	GOOS=linux GOARCH=amd64 go build -ldflags='-s' -o=./bin/linux_amd64/torkeldev-app ./cmd/web
 

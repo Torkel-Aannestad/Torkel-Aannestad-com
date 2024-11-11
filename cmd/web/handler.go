@@ -22,17 +22,13 @@ func (app *application) postHandler(w http.ResponseWriter, r *http.Request) {
 
 	app.render(w, r, http.StatusOK, "posts.tmpl", "posts", data)
 }
+
 func (app *application) postDetailsHandler(w http.ResponseWriter, r *http.Request) {
 	path := r.PathValue("id")
-
 	_, ok := app.postsData[path]
 	if !ok {
-		data := []post{}
-		for _, v := range app.postsData {
-			data = append(data, v)
-		}
-
-		app.render(w, r, http.StatusOK, "posts.tmpl", "posts", data)
+		http.Redirect(w, r, "/posts", http.StatusSeeOther)
+		return
 	}
 
 	pathFile := fmt.Sprintf("%v.tmpl", path)

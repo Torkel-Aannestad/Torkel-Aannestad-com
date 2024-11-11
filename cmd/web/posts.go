@@ -9,11 +9,13 @@ type post struct {
 
 func newPostsData() map[string]post {
 	posts := map[string]post{}
-	posts["how-this-website-is-made"] = post{
-		Title:       "How This Website is Made",
-		Slug:        "how-this-website-is-made",
-		Description: `Most companies try to stay ahead of the curve when it comes to visual design, but for Planetaria we needed to create a brand that would still inspire us 100 years from now when humanity has spread across our entire solar system.`,
-		Date:        "September 5, 2022",
+	posts["behind-the-scenes"] = post{
+		Title: "Behind the Scenes: Building This Website",
+		Slug:  "behind-the-scenes",
+		Description: `I'm peeling back the
+        curtain to give you a peek into the technologies and decisions that
+        brought this site to life.`,
+		Date: "November, 2024",
 	}
 	return posts
 }
