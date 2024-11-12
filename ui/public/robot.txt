@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://torkelaannestad.com
+
+# Sitemaps
+Sitemap: https://torkelaannestad.com/sitemap.xml
