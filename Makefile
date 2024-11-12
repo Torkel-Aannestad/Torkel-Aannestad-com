@@ -1,17 +1,26 @@
 include .env
 
+## help: available commands
+.PHONY: help
+help:
+	@echo 'Usage:'
+	@sed -n 's/^##//p' ${MAKEFILE_LIST} | column -t -s ':' |  sed -e 's/^/ /'
+
 .PHONY: confirm
 confirm:
 	@echo -n 'Are you sure? [y/N] ' && read ans && [ $${ans:-N} = y ]
 
+## live/server: starting Air dev server 
 .PHONY: live/server
 live/server:
 	air
 
+## live/tailwind: taiwind with --watch flag
 .PHONY: live/tailwind
 live/tailwind:
 	tailwindcss -i ui/css/input.css -o ui/public/css/styles.css --watch
 
+## run/app: run app on port 4001
 .PHONY: run/app
 run/app:
 	@./bin/app -env='development' -port='4001'
@@ -21,6 +30,7 @@ run/app:
 # ==================================================================================== #
 
 # go build -ldflags='-s' -C cmd/web -o ../../bin/app
+## build/app: production build
 .PHONY: build/app
 build/app:
 	@echo 'Building cmd/app...'
@@ -29,7 +39,7 @@ build/app:
 	GOOS=linux GOARCH=amd64 go build -ldflags='-s' -o=./bin/linux_amd64/torkeldev-app ./cmd/web
 
 
-## Quality control
+## audit: run quality control
 .PHONY: audit
 audit: vendor
 	@echo "Formatting code..."
