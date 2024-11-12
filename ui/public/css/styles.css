@@ -1824,8 +1824,16 @@ video {
   margin-bottom: calc(1.75rem * var(--tw-space-y-reverse));
 }
 
+.overflow-x-auto{
+  overflow-x: auto;
+}
+
 .overflow-x-hidden{
   overflow-x: hidden;
+}
+
+.overflow-x-scroll{
+  overflow-x: scroll;
 }
 
 .overflow-y-scroll{
