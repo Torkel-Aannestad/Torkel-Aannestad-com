@@ -1,3 +1,4 @@
+include .env
 
 .PHONY: confirm
 confirm:
@@ -51,20 +52,18 @@ vendor:
 # PRODUCTION
 # ==================================================================================== #
 
-production_host_ip = '10.1.1.23'
-
 ## production/connect: connect to the production server
 .PHONY: production/connect
 production/connect:
-	ssh torkeldev@${production_host_ip}
+	ssh torkeldev@${PRODUCTION_HOST_IP}
 
 ## production/deploy/api: deploy the api to production
 .PHONY: production/deploy/app
 production/deploy/app:
-	rsync -P ./bin/linux_amd64/torkeldev-app torkeldev@${production_host_ip}:~
-	rsync -P ./remote/production/torkeldev.service torkeldev@${production_host_ip}:~
-	rsync -P ./remote/production/Caddyfile torkeldev@${production_host_ip}:~
-	ssh -t torkeldev@${production_host_ip} '\
+	rsync -P ./bin/linux_amd64/torkeldev-app torkeldev@${PRODUCTION_HOST_IP}:~
+	rsync -P ./remote/production/torkeldev.service torkeldev@${PRODUCTION_HOST_IP}:~
+	rsync -P ./remote/production/Caddyfile torkeldev@${PRODUCTION_HOST_IP}:~
+	ssh -t torkeldev@${PRODUCTION_HOST_IP} '\
 		sudo mv ~/torkeldev.service /etc/systemd/system/ \
 		&& sudo systemctl enable torkeldev \
 		&& sudo systemctl restart torkeldev \
