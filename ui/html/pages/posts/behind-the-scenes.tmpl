@@ -1,6 +1,27 @@
-{{ define "title" }}Post{{ end }}
-{{ define "post-details" }}
-  <title>Behind the Scenes: Building This Website</title>
+{{ define "title" }}Behind the Scenes: Building This Website{{ end }}
+{{ define "behind-the-scenes" }}
+  <!doctype html>
+  <html lang="en">
+    {{ template "header" . }}
+    <body
+      class="relative bg-lightBeige flex min-h-screen flex-col text-neutral-900 overflow-y-scroll overflow-x-hidden"
+      hx-ext="head-support"
+    >
+      <header>
+        {{ template "nav" . }}
+      </header>
+
+      <main
+        id="main-content"
+        class="mx-auto max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl grow px-4 sm:px-6 lg:px-8 flex flex-col "
+      >
+        {{ template "main" . }}
+      </main>
+    </body>
+  </html>
+{{ end }}
+
+{{ define "main" }}
   <article
     class="mt-16 prose prose-neutral prose-sm sm:prose-base lg:prose-xl gsap-fade-in"
   >
@@ -121,8 +142,4 @@ document.addEventListener("DOMContentLoaded", animateOnLoad);
       <p>Thanks for reading! ❤️</p>
     </div>
   </article>
-{{ end }}
-
-{{ define "main" }}
-  {{ template "post-details" }}
 {{ end }}

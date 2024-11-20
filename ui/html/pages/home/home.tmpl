@@ -1,6 +1,27 @@
 {{ define "title" }}Torkel Aannestad{{ end }}
+{{ define "home" }}
+  <!doctype html>
+  <html lang="en">
+    {{ template "header" . }}
+    <body
+      class="relative bg-lightBeige flex min-h-screen flex-col text-neutral-900 overflow-y-scroll overflow-x-hidden"
+      hx-ext="head-support"
+    >
+      <header>
+        {{ template "nav" . }}
+      </header>
 
-{{- define "home" -}}
+      <main
+        id="main-content"
+        class="mx-auto max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl grow px-4 sm:px-6 lg:px-8 flex flex-col "
+      >
+        {{ template "main" . }}
+      </main>
+    </body>
+  </html>
+{{ end }}
+
+{{- define "main" -}}
   <title>Torkel Aannestad</title>
   <div class="py-24 sm:py-32 xl:py-44 font-light text-center xl:text-left">
     <div class="relative">
@@ -63,8 +84,4 @@
       class="w-[5%] lg:w-[3%] absolute top-20 sm:top-24 xl:top-32 right-[6%] lg:right-[16%] xl:right-[24%] -z-10"
     />
   </div>
-{{ end }}
-
-{{- define "main" -}}
-  {{ template "home" . }}
 {{ end }}

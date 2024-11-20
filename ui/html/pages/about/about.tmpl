@@ -1,6 +1,27 @@
 {{ define "title" }}About{{ end }}
 {{ define "about" }}
-  <title>About</title>
+  <!doctype html>
+  <html lang="en">
+    {{ template "header" . }}
+    <body
+      class="relative bg-lightBeige flex min-h-screen flex-col text-neutral-900 overflow-y-scroll overflow-x-hidden"
+      hx-ext="head-support"
+    >
+      <header>
+        {{ template "nav" . }}
+      </header>
+
+      <main
+        id="main-content"
+        class="mx-auto max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl grow px-4 sm:px-6 lg:px-8 flex flex-col "
+      >
+        {{ template "main" . }}
+      </main>
+    </body>
+  </html>
+{{ end }}
+
+{{ define "main" }}
   <div
     class="grid grid-cols-1 gap-y-16 pt-20 pb-10 lg:grid-cols-3 lg:grid-rows-[auto_1fr] lg:gap-y-12"
   >
@@ -134,8 +155,4 @@
       />
     </div>
   </div>
-{{ end }}
-
-{{ define "main" }}
-  {{ template "about" . }}
 {{ end }}
