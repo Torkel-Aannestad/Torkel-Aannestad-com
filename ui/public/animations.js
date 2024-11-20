@@ -17,3 +17,4 @@ function animateOnLoad() {
   });
 }
 document.addEventListener("DOMContentLoaded", animateOnLoad);
+document.addEventListener("htmx:afterSwap", animateOnLoad);

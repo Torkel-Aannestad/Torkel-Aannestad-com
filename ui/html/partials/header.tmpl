@@ -1,0 +1,36 @@
+{{- define "header" -}}
+  <head>
+    <link
+      rel="icon"
+      type="image/png"
+      href="/public/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/public/favicon.svg" />
+    <link rel="shortcut icon" href="/public/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/public/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/public/site.webmanifest" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="TorkelAannestad.com developer blog"
+      href="https://torkelaannestad.com/public/feed.xml"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/css/styles.css" />
+    <script src="/public/htmx-2.0.1.min.js" defer></script>
+    <script src="/public/prism.js" defer></script>
+    <script src="/public/allow422swap.js" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
+      defer
+    ></script>
+    <script src="/public/animations.js" defer></script>
+    <title>{{ template "title" . }}</title>
+  </head>
+{{ end }}
