@@ -81,7 +81,12 @@
         <div
           class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-darkBeige opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl /50"
         ></div>
-        <a href="posts/{{ .Slug }}" hx-target="main"
+        <a
+          href="posts/{{ .Slug }}"
+          hx-target="main"
+          hx-select="main"
+          preload="mouseover"
+          preload-images="true"
           ><span
             class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl "
           ></span

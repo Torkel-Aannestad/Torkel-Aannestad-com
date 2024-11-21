@@ -34,7 +34,7 @@ func (app *application) render(w http.ResponseWriter, r *http.Request, statusCod
 	// if r.Header.Get("HX-Request") == "true" {
 	// 	w.Header().Set("Vary", "HX-Request")
 	// }
-	w.Header().Set("Cache-Control", "private, max-age=60")
+	w.Header().Set("Cache-Control", "public")
 
 	template := strings.Split(page, ".")
 	buf := new(bytes.Buffer)
