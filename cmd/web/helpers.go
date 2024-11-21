@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"fmt"
 	"net/http"
+	"strings"
 )
 
 func (app *application) serverErrorResponse(w http.ResponseWriter, r *http.Request, err error) {
@@ -22,7 +23,7 @@ func (app *application) serverErrorResponse(w http.ResponseWriter, r *http.Reque
 // 	http.Error(w, http.StatusText(statusCode), statusCode)
 // }
 
-func (app *application) render(w http.ResponseWriter, r *http.Request, statusCode int, page, template string, data interface{}) {
+func (app *application) render(w http.ResponseWriter, r *http.Request, statusCode int, page string, data interface{}) {
 	templateSet, ok := app.templateCache[page]
 	if !ok {
 		err := fmt.Errorf("could not find requested page template in render")
@@ -30,14 +31,14 @@ func (app *application) render(w http.ResponseWriter, r *http.Request, statusCod
 		return
 	}
 
-	if r.Header.Get("HX-Request") == "true" {
-		w.Header().Set("Vary", "HX-Request")
-	} else {
-		template = "base"
-	}
+	// if r.Header.Get("HX-Request") == "true" {
+	// 	w.Header().Set("Vary", "HX-Request")
+	// }
+	w.Header().Set("Cache-Control", "private, max-age=60")
 
+	template := strings.Split(page, ".")
 	buf := new(bytes.Buffer)
-	err := templateSet.ExecuteTemplate(buf, template, data)
+	err := templateSet.ExecuteTemplate(buf, template[0], data)
 	if err != nil {
 		app.serverErrorResponse(w, r, err)
 		return

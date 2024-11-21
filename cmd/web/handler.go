@@ -6,13 +6,13 @@ import (
 )
 
 func (app *application) homeHandler(w http.ResponseWriter, r *http.Request) {
-	app.render(w, r, http.StatusOK, "home.tmpl", "home", nil)
+	app.render(w, r, http.StatusOK, "home.tmpl", nil)
 }
 func (app *application) notFoundHandler(w http.ResponseWriter, r *http.Request) {
-	app.render(w, r, http.StatusOK, "not-found.tmpl", "not-found", nil)
+	app.render(w, r, http.StatusOK, "not-found.tmpl", nil)
 }
 func (app *application) aboutHandler(w http.ResponseWriter, r *http.Request) {
-	app.render(w, r, http.StatusOK, "about.tmpl", "about", nil)
+	app.render(w, r, http.StatusOK, "about.tmpl", nil)
 }
 func (app *application) postHandler(w http.ResponseWriter, r *http.Request) {
 	data := []post{}
@@ -20,7 +20,7 @@ func (app *application) postHandler(w http.ResponseWriter, r *http.Request) {
 		data = append(data, v)
 	}
 
-	app.render(w, r, http.StatusOK, "posts.tmpl", "posts", data)
+	app.render(w, r, http.StatusOK, "posts.tmpl", data)
 }
 
 func (app *application) postDetailsHandler(w http.ResponseWriter, r *http.Request) {
@@ -32,5 +32,5 @@ func (app *application) postDetailsHandler(w http.ResponseWriter, r *http.Reques
 	}
 
 	pathFile := fmt.Sprintf("%v.tmpl", path)
-	app.render(w, r, http.StatusOK, pathFile, "post-details", nil)
+	app.render(w, r, http.StatusOK, pathFile, nil)
 }

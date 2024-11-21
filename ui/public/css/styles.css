@@ -1831,6 +1831,10 @@ video {
   border-radius: 0.375rem;
 }
 
+.rounded{
+  border-radius: 0.25rem;
+}
+
 .bg-darkBeige{
   --tw-bg-opacity: 1;
   background-color: rgb(255 237 202 / var(--tw-bg-opacity));
@@ -1862,6 +1866,10 @@ video {
 .object-cover{
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.p-4{
+  padding: 1rem;
 }
 
 .px-2{
