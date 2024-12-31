@@ -8,8 +8,15 @@
             "title": "Behind the Scenes: Building This Website",
             "slug": "behind-the-scenes",
             "description": "I'm peeling back the curtain to give you a peek into the technologies and decisions that brought this site to life.",
-            "date": "November,2024",
+            "date": "November, 2024",
             "pubDate": "2024-11-12T08:00:00Z"
+        },
+        {
+            "title": "How to Work with Passwords with Argon2 in Go",
+            "slug": "how-to-work-with-passwords-with-argon2-in-go",
+            "description": "A guide on how to hash, verify and encrypt password in go using argon2 for hashing and AES GCM algorithm for encryption.",
+            "date": "Desember, 2024",
+            "pubDate": "2024-12-31T08:00:00Z"
         }
     ]
 }
