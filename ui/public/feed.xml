@@ -3,12 +3,18 @@
     <title>TorkelAannestad.com developer blog</title>
     <description>My thought on programming, recent discoveries and learnings.</description>
     <link>https://torkelaannestad.com/posts</link>
-    <lastBuildDate>2024-11-21T08:17:47.943054108Z</lastBuildDate>
+    <lastBuildDate>2025-01-02T09:29:50.357361434Z</lastBuildDate>
     <language>en-US</language>
     <items>
         <title>Behind the Scenes: Building This Website</title>
         <description>I&#39;m peeling back the curtain to give you a peek into the technologies and decisions that brought this site to life.</description>
         <link>https://torkelaannestad.com/posts/behind-the-scenes</link>
         <pubDate>2024-11-12T08:00:00Z</pubDate>
+    </items>
+    <items>
+        <title>How to Work with Passwords with Argon2 in Go</title>
+        <description>A guide on how to hash, verify and encrypt password in go using argon2 for hashing and AES GCM algorithm for encryption.</description>
+        <link>https://torkelaannestad.com/posts/how-to-work-with-passwords-with-argon2-in-go</link>
+        <pubDate>2024-12-31T08:00:00Z</pubDate>
     </items>
 </RssChannel>
