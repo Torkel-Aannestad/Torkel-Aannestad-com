@@ -68,7 +68,7 @@ vendor:
 production/connect:
 	ssh torkeldev@${PRODUCTION_HOST_IP}
 
-## production/deploy/api: deploy the api to production
+## production/deploy/app: deploy the api to production
 .PHONY: production/deploy/app
 production/deploy/app:
 	rsync -P ./bin/linux_amd64/torkeldev-app torkeldev@${PRODUCTION_HOST_IP}:~
