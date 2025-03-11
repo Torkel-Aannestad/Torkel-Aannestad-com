@@ -1,6 +1,6 @@
 # TorkelAannestad.com
 
-This is Torkel Aannestads personal website. Built with HTMX and a simple Go HTTP-server. Go standard libary html-templates are used, you
+This is Torkel Aannestads personal website. Built with HTMX and a simple Go HTTP-server. Go standard libary html-templates are used with .templ extention.
 
 ## Posts and syntax highlighting
 
