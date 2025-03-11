@@ -1,10 +1,10 @@
 function animateOnLoad() {
-  gsap.from(".gsap-fade-in", {
-    duration: 1,
-    y: 100,
-    opacity: 0,
-    ease: "expo.out",
-  });
+  // gsap.from(".gsap-fade-in", {
+  //   duration: 1,
+  //   y: 100,
+  //   opacity: 0,
+  //   ease: "expo.out",
+  // });
 
   const ohoiElements = document.querySelectorAll(".gsap-ohoi");
   if (ohoiElements.length > 0) {
