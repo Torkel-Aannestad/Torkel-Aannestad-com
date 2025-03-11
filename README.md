@@ -1,4 +1,6 @@
-# Torkel Aannestad website
+# TorkelAannestad.com
+
+This is Torkel Aannestads personal website. Built with HTMX and a simple Go HTTP-server. Go standard libary html-templates are used, you
 
 ## Posts and syntax highlighting
 
