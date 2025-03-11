@@ -39,6 +39,7 @@ func (app *application) commonHeaders(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Security-Policy",
 			"default-src 'self'; "+
+				"connect-src 'self' https://analytics.easywave.io; "+
 				"script-src 'self' https://analytics.easywave.io https://unpkg.com https://cdn.jsdelivr.net; "+
 				"style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ http://localhost:4000; "+
 				"font-src https://fonts.gstatic.com;")
