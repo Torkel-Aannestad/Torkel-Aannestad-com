@@ -1,0 +1,144 @@
+{{ define "title" }}Projects{{ end }}
+{{ define "projects" }}
+  <!doctype html>
+  <html lang="en">
+    {{ template "header" . }}
+    <body
+      class="relative bg-lightBeige flex min-h-screen flex-col text-neutral-900 overflow-y-scroll overflow-x-hidden"
+    >
+      <header>
+        {{ template "nav" . }}
+      </header>
+
+      <main
+        id="main-content"
+        class="mx-auto max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl grow px-4 sm:px-6 lg:px-8 flex flex-col "
+        hx-ext="preload"
+      >
+        {{ template "main" . }}
+      </main>
+    </body>
+  </html>
+{{ end }}
+
+{{ define "main" }}
+  <div class="py-24 sm:py-32 xl:py-44 font-light">
+    <div class="relative">
+      <h1
+        class="text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl  "
+      >
+        Projects
+      </h1>
+      <p class="mt-6 text-lg md:text-xl xl:text-2xl text-neutral-700 ">
+        Here are a couple of projects I've built.
+      </p>
+    </div>
+    <div class="mt-6 grid grid-cols-1  gap-x-4 gap-y-10 ">
+      <div class="rounded-md w-full">
+        <img
+          src="/public/omdb@2x.webp"
+          alt=""
+          class="rounded-md aspect-3/2 h-auto w-full object-cover"
+        />
+        <p class="font-semibold text-lg xl:text-xl mt-4">OMDB</p>
+        <p>
+          OMDB is a movie and series discovery application created with Next.js.
+        </p>
+        <div class="mt-1 flex items-center gap-2">
+          <a
+            href="https://omdb.torkelaannestad.com/"
+            target="_blank"
+            rel="noopener"
+            class=" font-semibold py-1 border-b border-b-transparent  hover:border-neutral-800"
+          >
+            Website
+          </a>
+          <div class="font-bold text-lg">•</div>
+          <a
+            href="https://github.com/Torkel-Aannestad/OMDB-frontend"
+            target="_blank"
+            rel="noopener"
+            class="font-semibold py-1 border-b border-b-transparent  hover:border-neutral-800"
+          >
+            Github
+          </a>
+        </div>
+      </div>
+      <div class="rounded-md w-full">
+        <img
+          src="/public/omdb-api@2x.webp"
+          alt=""
+          class="rounded-md aspect-3/2 h-auto w-full object-cover"
+        />
+        <p class="font-semibold text-lg xl:text-xl mt-4">OMDB API</p>
+        <p>
+          OMDB API is a movie and series database presented as a JSON-api
+          written in Go.
+        </p>
+        <div class="mt-1 flex items-center gap-2">
+          <a
+            href="https://omdb-api.torkelaannestad.com/"
+            target="_blank"
+            rel="noopener"
+            class=" font-semibold py-1 border-b border-b-transparent  hover:border-neutral-800"
+          >
+            Website
+          </a>
+          <div class="font-bold text-lg">•</div>
+          <a
+            href="https://github.com/Torkel-Aannestad/OMDB-api"
+            target="_blank"
+            rel="noopener"
+            class=" font-semibold py-1 border-b border-b-transparent  hover:border-neutral-800"
+          >
+            Github
+          </a>
+        </div>
+      </div>
+      <div class="rounded-md w-full">
+        <img
+          src="/public/ombruksnettet@2x.webp"
+          alt=""
+          class="rounded-md aspect-3/2 h-auto w-full object-cover"
+        />
+        <p class="font-semibold text-lg xl:text-xl mt-4">Ombruksnettet</p>
+        <p>Developed with Next.js. Designed by Eggs Design</p>
+        <div class="mt-1 flex items-center gap-2">
+          <a
+            href="https://www.ombruksnettet.no/"
+            target="_blank"
+            rel="noopener"
+            class=" font-semibold py-1 border-b border-b-transparent  hover:border-neutral-800"
+          >
+            Website
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Left orange and dots -->
+    <img
+      src="/public/shapes/asset-shape-1.svg"
+      alt="shape"
+      class="w-8 sm:w-20 md:w-24 lg:w-32 absolute top-56 left-0 -z-10"
+    />
+    <!-- Right green saucage -->
+    <img
+      src="/public/shapes/asset-shape-2.svg"
+      alt="shape"
+      class="w-10 sm:w-20 md:w-24 lg:w-32 xl:w-36 absolute top-52 right-0 -z-10"
+    />
+    <!-- Left star -->
+    <img
+      src="/public/shapes/asset-star-1.svg"
+      alt="shape"
+      class="w-[3%] lg:w-[2%] absolute bottom-4 lg:bottom-24  left-[14%] lg:left-[8%] -z-10"
+    />
+    <!-- Right star -->
+    <img
+      src="/public/shapes/asset-star-2.svg"
+      alt="shape"
+      class="w-[5%] lg:w-[3%] absolute top-20 sm:top-24 xl:top-32 right-[6%] lg:right-[16%] xl:right-[24%] -z-10"
+    />
+  </div>
+{{ end }}

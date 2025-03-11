@@ -3,39 +3,54 @@
     class="mx-auto flex h-12 max-w-5xl justify-end px-2 sm:px-6 lg:px-8 relative"
   >
     <ul class="flex items-center gap-4">
-      <button
-        hx-get="/"
-        hx-target="main"
-        hx-select="main"
-        hx-push-url="/"
-        preload="mouseover"
-        preload-images="true"
-        class="hover:border-b hover:border-neutral-800"
-      >
-        <li class="py-2">Home</li>
-      </button>
-      <button
-        hx-get="/posts"
-        hx-target="main"
-        hx-select="main"
-        hx-push-url="/posts"
-        preload="mouseover"
-        preload-images="true"
-        class="hover:border-b hover:border-neutral-800"
-      >
-        <li class="py-2">Posts</li>
-      </button>
-      <button
-        hx-get="/about"
-        hx-target="main"
-        hx-select="main"
-        hx-push-url="/about"
-        preload="mouseover"
-        preload-images="true"
-        class="hover:border-b hover:border-neutral-800 "
-      >
-        <li class="py-2">About</li>
-      </button>
+      <li class="py-2 border-b-transparent border-b hover:border-neutral-800">
+        <button
+          hx-get="/"
+          hx-target="main"
+          hx-select="main"
+          hx-push-url="/"
+          preload="mouseover"
+          preload-images="true"
+        >
+          Home
+        </button>
+      </li>
+      <li class="py-2 border-b-transparent border-b hover:border-neutral-800">
+        <button
+          hx-get="/about"
+          hx-target="main"
+          hx-select="main"
+          hx-push-url="/about"
+          preload="mouseover"
+          preload-images="true"
+        >
+          About
+        </button>
+      </li>
+      <li class="py-2 border-b-transparent  border-b hover:border-neutral-800">
+        <button
+          hx-get="/posts"
+          hx-target="main"
+          hx-select="main"
+          hx-push-url="/posts"
+          preload="mouseover"
+          preload-images="true"
+        >
+          Posts
+        </button>
+      </li>
+      <li class="py-2 border-b-transparent border-b hover:border-neutral-800">
+        <button
+          hx-get="/projects"
+          hx-target="main"
+          hx-select="main"
+          hx-push-url="/projects"
+          preload="mouseover"
+          preload-images="true"
+        >
+          Projects
+        </button>
+      </li>
     </ul>
     <img
       src="/public/shapes/asset-arrow-1.svg"

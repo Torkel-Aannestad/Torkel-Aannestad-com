@@ -34,3 +34,8 @@ func (app *application) postDetailsHandler(w http.ResponseWriter, r *http.Reques
 	pathFile := fmt.Sprintf("%v.tmpl", path)
 	app.render(w, r, http.StatusOK, pathFile, nil)
 }
+
+func (app *application) projectsHandler(w http.ResponseWriter, r *http.Request) {
+
+	app.render(w, r, http.StatusOK, "projects.tmpl", nil)
+}
